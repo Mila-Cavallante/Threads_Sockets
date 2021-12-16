@@ -35,23 +35,25 @@ public class SocketServidor {
             InputStreamReader tisr= new InputStreamReader(tis); //estabele um gerenciamento de stream de leitura
             
             leitor = new BufferedReader(tisr); // faz a leitura da stream de leitura para leitor
-           
+          
             String textoDoCliente = leitor.readLine(); //obtem o texto da stream de leitura
             
             imprimeNoSocket.println("Olá, sou o servidor.");//imprimi o texto para a stream
             
             imprimeNoSocket.flush();//descarrega a stream para o socket, dá a vez para o cliente
             
-            String textoDoCliente1 = leitor.readLine();
+            //String textoDoCliente1 = leitor.readLine();
             
-            imprimeNoSocket.println("Mensagem recebida.");//imprimi o texto para a stream
+            //imprimeNoSocket.println("Mensagem recebida.");//imprimi o texto para a stream
             
-            imprimeNoSocket.flush();//descarrega a stream para o socket, dá a vez para o cliente
+           // imprimeNoSocket.flush();//descarrega a stream para o socket, dá a vez para o cliente
             
             tsocket.close(); //fecha o socket
             
             System.out.println("Recebido do Cliente: " + textoDoCliente);
-            System.out.println("Recebido do Cliente: " + textoDoCliente1);
+                   
+            //System.out.println("Recebido do Cliente: " + textoDoCliente);
+            //System.out.println("Recebido do Cliente: " + textoDoCliente1);
         }
         catch(IOException e ){
             System.out.println("Cliente não conseguiu se conctar");
