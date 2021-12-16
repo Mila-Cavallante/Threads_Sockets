@@ -29,22 +29,29 @@ public class SocketCliente {
             
             leitor = new BufferedReader(new InputStreamReader(tsocket.getInputStream())); //cria o gerenciador da stream de entrada e leitura
             
-            imprimeNoSocket.println("Olá, sou a Camila."); //envia mensagem para o servidor
+            String texto = "Olá, sou Camila.:Está é a segunda mensagem para o exerício!";
+            String[] elementos = texto.split(":");
+            
+            for(int i=0;i<elementos.length;i++){
+                imprimeNoSocket.println(""+elementos[i]);
+            }
+            
+            //imprimeNoSocket.println("Olá, sou a Camila."); //envia mensagem para o servidor
             
             imprimeNoSocket.flush();//descarrega a stream no socket, dá a vez para o servidor
             
             String textoDoServidor = leitor.readLine(); //recebe os dados do servidor
             
-            imprimeNoSocket.println("Esta é a segunda mensagem."); //envia mensagem para o servidor
+           // imprimeNoSocket.println("Esta é a segunda mensagem."); //envia mensagem para o servidor
             
-            imprimeNoSocket.flush();//descarrega a stream no socket, dá a vez para o servidor
+           // imprimeNoSocket.flush();//descarrega a stream no socket, dá a vez para o servidor
             
-            String textoDoServidor1 = leitor.readLine(); //recebe os dados do servidor
+            //String textoDoServidor1 = leitor.readLine(); //recebe os dados do servidor
             
             tsocket.close();//fecha o socket
             
             System.out.println("Recebido do Servidor: " + textoDoServidor);
-            System.out.println("Recebido do Servidor: " + textoDoServidor1);
+            //System.out.println("Recebido do Servidor: " + textoDoServidor1);
             
         }       
         catch(IOException e ){
